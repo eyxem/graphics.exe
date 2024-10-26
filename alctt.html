@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Relatório das redes sociais</h1>
+        <nav>
+            <a href="index.html">Mundo</a>
+        </nav>
+    </header>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <div id="chart">
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', { packages: [ 'corechart' ] })
+                    google.charts.setOnLoadCallback(drawChart)
+            
+            function drawChart() {
+                const container = document.querySelector('#chart')
+                const data = new google.visualization.arrayToDataTable([
+                    [ 'Personagens', 'Win Rate' ],
+                    [ 'Gwen', 51.06% ],
+                    [ 'Lillia', 50.53% ],
+                    [ 'Shaco', 50.40% ],
+                    [ 'Kayn', 50.20% ],
+                    [ 'Evelynn', 50.10% ]
+                ])
+
+                const options = {
+                    title: 'League Of Legends - Characters Win Rate'
+                    height: 400,
+                    width: 720
+                }
+
+                const chart = new google.visualization.ColumnChart(container)
+                chart.draw(data, options)
+            }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Anike</p>
+    </footer>
+</body>
+</html>
